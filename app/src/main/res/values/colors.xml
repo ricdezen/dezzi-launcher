@@ -5,4 +5,5 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorAppList">#44000000</color>
     <color name="colorAppListNames">#FFFFFF</color>
+    <color name="colorSearchBar">#88FFFFFF</color>
 </resources>
