@@ -20,6 +20,7 @@ class AppViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView iconView;
     private TextView titleView;
+    private String currentPackage;
 
     /**
      * Constructor taking a View as its parameter, the View must be an inflation of a View
@@ -29,6 +30,10 @@ class AppViewHolder extends RecyclerView.ViewHolder {
      */
     public AppViewHolder(@NonNull View itemView) {
         super(itemView);
+        //On click the current package starts an Activity.
+        itemView.setOnClickListener(view -> view.getContext().startActivity(
+                view.getContext().getPackageManager().getLaunchIntentForPackage(currentPackage)
+        ));
         this.iconView = itemView.findViewById(R.id.base_list_item_icon);
         this.titleView = itemView.findViewById(R.id.base_list_item_title);
     }
@@ -39,6 +44,7 @@ class AppViewHolder extends RecyclerView.ViewHolder {
      * @param appInfo The {@link ResolveInfo} Object containing the data of an app.
      */
     public void populate(AppInfo appInfo) {
+        currentPackage = appInfo.getPackageName();
         iconView.setImageDrawable(appInfo.getIcon());
         titleView.setText(appInfo.getLabel());
     }

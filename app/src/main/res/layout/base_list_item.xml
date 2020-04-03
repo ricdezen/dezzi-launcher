@@ -25,6 +25,8 @@
         android:textColor="@color/colorAppListNames"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/base_list_item_icon"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/label_background"
+        android:padding="4dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

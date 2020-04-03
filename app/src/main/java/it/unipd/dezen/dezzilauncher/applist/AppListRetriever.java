@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class AppListRetriever extends AsyncTask<Void, Float, Boolean> {
@@ -59,6 +60,7 @@ public class AppListRetriever extends AsyncTask<Void, Float, Boolean> {
     @Override
     protected void onPostExecute(Boolean aBoolean) {
         super.onPostExecute(aBoolean);
+        Collections.sort(appsList);
         if (aBoolean) listener.postValue(appsList);
     }
 }
